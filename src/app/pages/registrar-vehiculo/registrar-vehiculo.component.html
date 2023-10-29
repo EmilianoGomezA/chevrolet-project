@@ -1,0 +1,133 @@
+<section class="wrapper">
+  <h3>Registrar vehículo</h3>
+  <form (ngSubmit)="onSubmit()" #formAgregarVehiculo="ngForm">
+    <!--
+    <div>
+      <label for="modelo">Modelo</label>
+      <input type="text" name="modelo" id="modelo" [(ngModel)]="vehiculoModel.modelo" maxlength="10">
+    </div>
+    <div>
+      <label for="color">Color</label>
+      <select name="color" id="color" [(ngModel)]="vehiculoModel.color">
+        <option *ngFor="let color of colores" [ngValue]="color">{{ color.nombre }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="clasificacion">Clasificación</label>
+      <select name="clasificacion" id="clasificacion" [(ngModel)]="vehiculoModel.clasificacion">
+        <option *ngFor="let clasificacion of clasificaciones" [ngValue]="clasificacion">{{ clasificacion }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="transmision">Transmisión</label>
+      <select name="transmision" id="transmision" [(ngModel)]="vehiculoModel.transmision">
+        <option *ngFor="let transmision of transmisiones" [ngValue]="transmision">{{ transmision }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="motor">Motor</label>
+      <input type="text" name="motor" id="motor" [(ngModel)]="vehiculoModel.motor" maxlength="15">
+    </div>
+    <div>
+      <label for="cilindraje">Cilindraje</label>
+      <input type="text" name="cilindraje" id="cilindraje" [(ngModel)]="vehiculoModel.cilindraje" (keypress)="numberValidation($event)" maxlength="2">
+    </div>
+    <div>
+      <label for="precio">Precio</label>
+      <input type="text" name="precio" id="precio" [(ngModel)]="vehiculoModel.precio" (keypress)="numberValidation($event)" maxlength="10">
+    </div>
+    <div>
+      <label for="imagen">Imagen</label>
+      <input type="file" accept="image/*" name="imagen" id="imagen" (change)="onFileSelected($event)">
+    </div> -->
+    
+    <!-- <div>
+      <label for="imagen">Imagen</label>
+      <input type="file" accept="image/*" name="imagen" id="imagen" (change)="onFileSelected($event)">
+    </div> -->
+
+    <app-custom-input 
+      inputType="text" 
+      inputName="nombre" 
+      maxChar="20"
+      [ngModelProperty]="vehiculoModel.nombre" 
+      (ngModelPropertyChange)="vehiculoModel.nombre = $event"
+      [letterValidation]="true"
+    >
+    </app-custom-input>
+
+    <app-custom-input 
+      inputType="text" 
+      inputName="modelo" 
+      maxChar="10"
+      [ngModelProperty]="vehiculoModel.modelo" 
+      (ngModelPropertyChange)="vehiculoModel.modelo = $event"
+    >
+    </app-custom-input>
+
+    <app-custom-input  
+      inputType="select" 
+      inputName="color"
+      [ngModelProperty]="vehiculoModel.color" 
+      (ngModelPropertyChange)="vehiculoModel.color = $event"
+      [array]="colores"
+    >
+    </app-custom-input>
+
+    <app-custom-input  
+      inputType="select" 
+      inputName="clasificacion"
+      [ngModelProperty]="vehiculoModel.clasificacion" 
+      (ngModelPropertyChange)="vehiculoModel.clasificacion = $event"
+      [array]="clasificaciones"
+    >
+    </app-custom-input>
+
+    <app-custom-input  
+      inputType="select" 
+      inputName="transmision"
+      [ngModelProperty]="vehiculoModel.transmision" 
+      (ngModelPropertyChange)="vehiculoModel.transmision = $event"
+      [array]="transmisiones"
+    >
+    </app-custom-input>
+
+    <app-custom-input  
+      inputType="text" 
+      inputName="motor"
+      maxChar="15"
+      [ngModelProperty]="vehiculoModel.motor" 
+      (ngModelPropertyChange)="vehiculoModel.motor = $event"
+    >
+    </app-custom-input>
+
+    <app-custom-input  
+      inputType="text" 
+      inputName="cilindraje"
+      maxChar="2"
+      [ngModelProperty]="vehiculoModel.cilindraje" 
+      (ngModelPropertyChange)="vehiculoModel.cilindraje = $event"
+      [numberValidation]="true"
+    >
+    </app-custom-input>
+
+    <app-custom-input  
+      inputType="text" 
+      inputName="precio"
+      maxChar="10"
+      [ngModelProperty]="vehiculoModel.precio" 
+      (ngModelPropertyChange)="vehiculoModel.precio = $event"
+      [numberValidation]="true"
+    >
+    </app-custom-input>
+
+    <app-custom-input  
+      inputType="file" 
+      inputName="imagen" 
+      (selectedFileChange)="selectedFile = $event"
+    >
+    </app-custom-input>
+
+    <input type="submit" value="Registrar vehículo">
+  </form>
+</section>

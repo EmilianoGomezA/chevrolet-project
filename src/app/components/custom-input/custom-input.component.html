@@ -1,0 +1,31 @@
+<div>
+  <label [htmlFor]="inputName">{{ inputName }}</label>
+
+  <ng-container *ngIf="inputType === 'text'">
+    <input 
+    [type]="inputType" 
+    [name]="inputName" 
+    [id]="inputName" 
+    [maxLength]="maxChar" 
+    [(ngModel)]="ngModelProperty" 
+    (keypress)="validateChar($event)" 
+    (change)="onInputChange(ngModelProperty)"
+    >
+  </ng-container>
+
+  <ng-container *ngIf="inputType === 'select'">
+    <select 
+      [name]="inputName" 
+      [id]="inputName" 
+      [(ngModel)]="ngModelProperty" 
+      (change)="onInputChange(ngModelProperty)"
+    >
+      <option *ngFor="let element of array" [ngValue]="element">{{ element.nombre || element }}</option>
+    </select>
+  </ng-container>
+
+  <ng-container *ngIf="inputType === 'file'">
+    <input type="file" accept="image/*" name="imagen" id="imagen" [(ngModel)]="ngModelProperty" (change)="onFileChange($event)">
+  </ng-container>
+  
+</div>

@@ -1,0 +1,6 @@
+<section class="wrapper">
+  <a routerLink="/registrar-vehiculo"><span class="material-symbols-outlined">directions_car</span> Nuevo vehículo</a>
+  <section class="cards-container">
+    <app-car-card *ngFor="let vehiculo of vehiculos" [vehiculo]="vehiculo"></app-car-card>
+  </section>
+</section>

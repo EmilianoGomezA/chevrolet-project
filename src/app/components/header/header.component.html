@@ -1,0 +1,20 @@
+<header>
+  <button type="button" (click)="changeMenuState()">
+    <span *ngIf="!menuMode" class="material-symbols-outlined">menu</span>
+    <span *ngIf="menuMode" class="material-symbols-outlined">close</span>
+  </button>
+  <a routerLink="" (click)="redirectToHomeWithIcon()">
+    <img src="../../../assets/chevrolet-logo.webp" alt="Logo Chevrolet" />
+  </a>
+</header>
+
+<ng-container *ngIf="menuMode">
+  <nav>
+    <ng-container *ngFor="let section of sections">
+      <a [routerLink]="section.route" (click)="changeMenuState()">
+        <span class="material-symbols-outlined">{{ section.icon }}</span>
+        <p>{{ section.label }}</p>
+      </a>
+    </ng-container>
+  </nav>
+</ng-container>

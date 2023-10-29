@@ -1,0 +1,53 @@
+<div class="card">
+  <h3 class="car-name">
+    {{ vehiculo.nombre }}
+    {{ vehiculo.modelo }}
+  </h3>
+  <div class="car-image">
+    <img [src]="imagenUrl" [alt]="vehiculo.nombre">
+  </div>
+  <div>
+    <table>
+      <tr>
+        <td>Código</td>
+        <td>{{ vehiculo.idVehiculo }}</td>
+      </tr>
+      <tr>
+        <td>Nombre</td>
+        <td>{{ vehiculo.nombre }}</td>
+      </tr>
+      <tr>
+        <td>Modelo</td>
+        <td>{{ vehiculo.modelo }}</td>
+      </tr>
+      <tr>
+        <td>Color</td>
+        <td class="flex-cell">
+          <div [style.background-color]="vehiculo.color_codigo" class="showColor"></div>
+          <p>{{ vehiculo.color_nombre }}</p>
+          <div class="clearfix"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Categoría</td>
+        <td>{{ vehiculo.clasificacion }}</td>
+      </tr>
+      <tr>
+        <td>Transmisión</td>
+        <td>{{ vehiculo.transmision }}</td>
+      </tr>
+      <tr>
+        <td>Motor</td>
+        <td>{{ vehiculo.motor }}</td>
+      </tr>
+      <tr>
+        <td>Cilindraje</td>
+        <td>{{ vehiculo.cilindraje }}</td>
+      </tr>
+      <tr>
+        <td>Precio</td>
+        <td>${{ precioFormateado }}.00 MXN</td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+@import 'src/styles.scss';
+
+.card {
+  width: 100%;
+  border-radius: 8px;
+  padding-top: 20px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+
+  .car-name {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .car-image {
+    width: 90%;
+    margin: 0 auto 20px auto;
+    
+    img {
+      width: 100%;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 1px solid $main-color-25;
+
+    tr {
+      td {
+        overflow: hidden;
+        padding: 10px;
+        border-bottom: 1px solid $main-color-25;
+      }
+
+      td:nth-of-type(1) {
+        background-color: $tertiary-color;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .flex-cell {
+        .showColor {
+          float: left;
+          width: 20px;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          border: 1px solid $main-color-25;
+          margin-right: 5px;
+        }
+
+        p {
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+.clearfix {
+  clear: both;
+}
