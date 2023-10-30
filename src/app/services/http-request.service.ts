@@ -24,6 +24,10 @@ export class HttpRequestService {
     return this.http.get(`${this.baseUrl}/obtenerVehiculo.php?idVehiculo=${id}`);
   }
 
+  editarVehiculo(vehiculo: Vehiculo) {
+    return this.http.put(`${this.baseUrl}/editarVehiculo.php`, vehiculo);
+  }
+
   eliminarVehiculo(idVehiculo: number | string) {
     return this.http.delete(`${this.baseUrl}/eliminarVehiculo.php?idVehiculo=${idVehiculo}`);
   }

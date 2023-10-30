@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RegistrarVehiculoComponent } from './pages/registrar-vehiculo/registrar-vehiculo.component';
 import { CarCardComponent } from './components/car-card/car-card.component';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
+import { EditarVehiculoComponent } from './pages/editar-vehiculo/editar-vehiculo.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CustomInputComponent } from './components/custom-input/custom-input.com
     FooterComponent,
     RegistrarVehiculoComponent,
     CarCardComponent,
-    CustomInputComponent
+    CustomInputComponent,
+    EditarVehiculoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,20 @@
 <section class="wrapper">
   <a routerLink="/registrar-vehiculo"><span class="material-symbols-outlined">directions_car</span> Nuevo vehículo</a>
   <section class="cards-container">
-    <app-car-card *ngFor="let vehiculo of vehiculos" [vehiculo]="vehiculo"></app-car-card>
+    <app-car-card *ngFor="let vehiculo of vehiculos" [vehiculo]="vehiculo" (setData)="setModal($event)"></app-car-card>
   </section>
 </section>
+
+<div *ngIf="mostrarModalEliminar" class="modal-overlay">
+  <div class="modal">
+    <span class="close" (click)="ocultarModalConfirmacion()">&times;</span>
+    <p class="modal-header">Eliminar elemento</p>
+    <div class="modal-body">
+      <p>¿Estás seguro de que deseas eliminar el vehículo {{ nombreVehiculoAEliminar }}?</p>
+    </div>
+    <div class="modal-actions">
+      <button (click)="ocultarModalConfirmacion()" class="btn-cancelar">Cancelar</button>
+      <button (click)="eliminarVehiculo(idVehiculoAEliminar)" class="btn-confirmar">Confirmar</button>
+    </div>
+  </div>
+</div>

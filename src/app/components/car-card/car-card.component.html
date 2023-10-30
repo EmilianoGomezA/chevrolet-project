@@ -49,5 +49,13 @@
         <td>${{ precioFormateado }}.00 MXN</td>
       </tr>
     </table>
+    <div class="actionButtons">
+      <a [routerLink]="['/vehiculos/editar', vehiculo.idVehiculo]">
+        <span class="material-symbols-outlined">edit</span>
+      </a>
+      <button (click)="handleClickDelete()">
+        <span class="material-symbols-outlined">delete</span>
+      </button>
+    </div>
   </div>
 </div>

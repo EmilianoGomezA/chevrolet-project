@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Vehiculo, VehiculoSubido } from 'src/app/models/vehiculo.model';
 import { environment } from 'src/environments/environment';
 
@@ -20,8 +20,11 @@ export class CarCardComponent implements OnInit{
     motor: '',
     cilindraje: 0,
     precio: 0,
-    imagen: ''
+    imagen: '',
+    idVehiculo: 0
   }
+
+  @Output() setData: EventEmitter<{id: number, nombre: string}> = new EventEmitter<{id: number, nombre: string}>();
 
   precioFormateado: string = '';
   imagenUrl: string = '';
@@ -29,6 +32,10 @@ export class CarCardComponent implements OnInit{
   ngOnInit(): void {
     this.precioFormateado = this.vehiculo.precio.toLocaleString();
     this.imagenUrl = `${environment.baseUrl}/${this.vehiculo.imagen}`;
+  }
+
+  handleClickDelete() {
+    this.setData.emit({ id: this.vehiculo.idVehiculo, nombre: `${this.vehiculo.nombre} ${this.vehiculo.modelo}` });
   }
 
 }

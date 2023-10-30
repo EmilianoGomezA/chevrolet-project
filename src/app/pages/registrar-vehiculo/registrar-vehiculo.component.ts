@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Vehiculo } from 'src/app/models/vehiculo.model';
 import { HttpRequestService } from 'src/app/services/http-request.service';
-import { FormMethodsService } from 'src/app/services/form-methods.service';
 import { transmisiones, colores, clasificaciones } from 'src/app/constants/constants';
 
 @Component({
@@ -18,19 +17,7 @@ export class RegistrarVehiculoComponent {
   clasificaciones = clasificaciones;
   transmisiones = transmisiones;
 
-  constructor(private httpRequestService: HttpRequestService, private router: Router, private formMethods: FormMethodsService) { }
-
-  onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0] as File;
-  }
-
-  numberValidation(key: any) {
-    return this.formMethods.onlyNumber(key);
-  }
-
-  letterValidation(key: any) {
-    return this.formMethods.onlyLetter(key);
-  }
+  constructor(private httpRequestService: HttpRequestService, private router: Router) { }
 
   onSubmit() {
     const validations = [
@@ -60,9 +47,10 @@ export class RegistrarVehiculoComponent {
       formData.append('imagen', this.selectedFile);
 
       this.httpRequestService.agregarVehiculo(formData).subscribe(() => this.router.navigate(['/vehiculos']));
-      
+
     } else {
       console.log("No se colocó una propiedad");
     }
   }
+
 }

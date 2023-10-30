@@ -57,6 +57,39 @@
       }
     }
   }
+
+  .actionButtons {
+    display: flex;
+
+    a {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      background-color: rgba(233, 186, 0, 0.8);
+      text-decoration: none;
+      
+      span {
+        color: #fff;
+      }
+    }
+
+    button {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      border: none;
+      outline: none;
+      background-color: rgba(255, 0, 0, 0.800);
+      
+      span {
+        color: #fff;
+      }
+    }
+  }
 }
 
 .clearfix {

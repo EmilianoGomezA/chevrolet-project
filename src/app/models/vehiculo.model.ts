@@ -30,6 +30,6 @@ export class VehiculoSubido {
     public cilindraje: number,
     public precio: number,
     public imagen: string,
-    public idVehiculo?: number
+    public idVehiculo: number
   ) { }
 }
