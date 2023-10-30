@@ -1,5 +1,5 @@
 <section class="wrapper">
-  <a routerLink="/registrar-vehiculo"><span class="material-symbols-outlined">directions_car</span> Nuevo vehículo</a>
+  <a routerLink="/vehiculos/registrar"><span class="material-symbols-outlined">directions_car</span> Nuevo vehículo</a>
   <section class="cards-container">
     <app-car-card *ngFor="let vehiculo of vehiculos" [vehiculo]="vehiculo" (setData)="setModal($event)"></app-car-card>
   </section>

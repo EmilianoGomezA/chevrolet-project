@@ -1,11 +1,12 @@
 <div>
-  <label [htmlFor]="inputName">{{ inputName }}</label>
+  <label [htmlFor]="inputName">{{ inputLabel }}</label>
 
   <ng-container *ngIf="inputType === 'text'">
     <input 
-    [type]="inputType" 
+    type="text" 
     [name]="inputName" 
-    [id]="inputName" 
+    [id]="inputName"
+    [minLength]="minChar" 
     [maxLength]="maxChar" 
     [(ngModel)]="ngModelProperty" 
     (keypress)="validateChar($event)" 
@@ -26,6 +27,27 @@
 
   <ng-container *ngIf="inputType === 'file'">
     <input type="file" accept="image/*" name="imagen" id="imagen" [(ngModel)]="ngModelProperty" (change)="onFileChange($event)">
+  </ng-container>
+
+  <ng-container *ngIf="inputType === 'date'">
+    <input 
+    type="date" 
+    [name]="inputName" 
+    [id]="inputName" 
+    [min]="fechaMinima"  
+    (change)="onDateChange($event)"
+    >
+  </ng-container>
+
+  <ng-container *ngIf="inputType === 'car'">
+    <select 
+      [name]="inputName" 
+      [id]="inputName" 
+      [(ngModel)]="ngModelProperty" 
+      (change)="onInputChange(ngModelProperty)"
+    >
+      <option *ngFor="let element of array" [ngValue]="element.nombre+ ' ' + element.modelo">{{ element.nombre }} {{element.modelo}}</option>
+    </select>
   </ng-container>
   
 </div>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormMethodsService } from 'src/app/services/form-methods.service';
 
 @Component({
@@ -6,11 +6,13 @@ import { FormMethodsService } from 'src/app/services/form-methods.service';
   templateUrl: './custom-input.component.html',
   styleUrls: ['./custom-input.component.scss']
 })
-export class CustomInputComponent {
+export class CustomInputComponent implements OnInit{
 
   @Input() ngModelProperty: any = null;
+  @Input() inputLabel: string = '';
   @Input() inputType: string = '';
   @Input() inputName: string = '';
+  @Input() minChar: string = '';
   @Input() maxChar: string = '';
   @Input() numberValidation: boolean = false;
   @Input() letterValidation: boolean = false;
@@ -19,9 +21,18 @@ export class CustomInputComponent {
   @Output() ngModelPropertyChange = new EventEmitter<any>();
   @Output() selectedFileChange = new EventEmitter<File | null>();
 
+  selectedFile: File | null = null; 
+  fechaMinima: any = null;
+
   constructor(private formMethods: FormMethodsService) { }
 
-  selectedFile: File | null = null;
+  ngOnInit(): void {
+    if(this.inputType === 'date') {
+      let fechaActual = new Date();
+      fechaActual.setDate(fechaActual.getDate() + 2);
+      this.fechaMinima = fechaActual.toISOString().slice(0, 10);
+    }
+  }
 
   validateNumber(key: any) {
     return this.formMethods.onlyNumber(key);
@@ -55,5 +66,9 @@ export class CustomInputComponent {
     }
 
     this.selectedFileChange.emit(this.selectedFile);
+  }
+
+  onDateChange(event: any) {
+    this.ngModelPropertyChange.emit(event.target.value);
   }
 }

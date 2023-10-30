@@ -1,0 +1,71 @@
+<section class="wrapper">
+  <div class="form-header">
+    <a routerLink="/"><span class="material-symbols-outlined">arrow_back</span></a>
+    <h3>Realizar cotización</h3>
+  </div>
+  <form (ngSubmit)="onSubmit()" #formAgregarCotizacion="ngForm">
+
+    <app-custom-input
+    inputType="text"
+    inputLabel="Nombre"
+    inputName="nombre"
+    [letterValidation]="true"
+    maxChar="50"
+    [ngModelProperty]="cotizacion.nombre"
+    (ngModelPropertyChange)="cotizacion.nombre = $event">
+    </app-custom-input>
+
+    <app-custom-input
+    inputType="text"
+    inputLabel="Apellidos"
+    inputName="apellidos"
+    [letterValidation]="true"
+    maxChar="50"
+    [ngModelProperty]="cotizacion.apellidos"
+    (ngModelPropertyChange)="cotizacion.apellidos = $event">
+    </app-custom-input>
+
+    <app-custom-input
+    inputType="text"
+    inputLabel="Código postal"
+    inputName="codigo_postal"
+    minChar="5"
+    maxChar="5"
+    [numberValidation]="true"
+    [ngModelProperty]="cotizacion.codigo_postal"
+    (ngModelPropertyChange)="cotizacion.codigo_postal = $event">
+    </app-custom-input>
+
+    <app-custom-input
+    inputType="text"
+    inputLabel="Correo electrónico"
+    inputName="email"
+    maxChar="100"
+    [ngModelProperty]="cotizacion.email"
+    (ngModelPropertyChange)="cotizacion.email = $event">
+    </app-custom-input>
+
+    <app-custom-input
+    inputType="text"
+    inputLabel="Número de teléfono"
+    inputName="telefono"
+    [numberValidation]="true"
+    minChar="10"
+    maxChar="10"
+    [ngModelProperty]="cotizacion.telefono"
+    (ngModelPropertyChange)="cotizacion.telefono = $event">
+    </app-custom-input>
+
+    <app-custom-input
+    inputType="car"
+    inputLabel="Vehículo"
+    inputName="vehiculo"
+    [ngModelProperty]="cotizacion.vehiculo"
+    (ngModelPropertyChange)="cotizacion.vehiculo = $event"
+    [array]="vehiculos">
+    </app-custom-input>
+
+    <input type="submit" value="Enviar datos">
+    
+  </form>
+</section>

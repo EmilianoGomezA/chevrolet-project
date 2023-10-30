@@ -25,7 +25,12 @@ export class HeaderComponent {
       label: "Servicio",
       route: "/servicio",
       icon: "build"
-    }
+    },
+    {
+      label: "Solicita cotización",
+      route: "/cotizaciones",
+      icon: "request_quote"
+    } 
   ];
 
   changeMenuState() {

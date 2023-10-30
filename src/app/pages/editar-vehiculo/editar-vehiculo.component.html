@@ -1,9 +1,13 @@
 <section class="wrapper">
-  <h3>Actualizar vehículo</h3>
+  <div class="form-header">
+    <a routerLink="/vehiculos"><span class="material-symbols-outlined">arrow_back</span></a>
+    <h3>Editar vehículo</h3>
+  </div>
   <form (ngSubmit)="onSubmit()" #formEditarVehiculo="ngForm">
 
     <app-custom-input 
-      inputType="text" 
+      inputType="text"
+      inputLabel="Nombre" 
       inputName="nombre" 
       maxChar="20"
       [ngModelProperty]="vehiculo.nombre" 
@@ -13,7 +17,8 @@
     </app-custom-input>
 
     <app-custom-input 
-      inputType="text" 
+      inputType="text"
+      inputLabel="Modelo" 
       inputName="modelo" 
       maxChar="10"
       [ngModelProperty]="vehiculo.modelo" 
@@ -22,7 +27,8 @@
     </app-custom-input>
 
     <app-custom-input  
-      inputType="select" 
+      inputType="select"
+      inputLabel="Color" 
       inputName="color"
       [ngModelProperty]="vehiculo.color" 
       (ngModelPropertyChange)="vehiculo.color = $event"
@@ -31,7 +37,8 @@
     </app-custom-input>
 
     <app-custom-input  
-      inputType="select" 
+      inputType="select"
+      inputLabel="Clasificación" 
       inputName="clasificacion"
       [ngModelProperty]="vehiculo.clasificacion" 
       (ngModelPropertyChange)="vehiculo.clasificacion = $event"
@@ -40,7 +47,8 @@
     </app-custom-input>
 
     <app-custom-input  
-      inputType="select" 
+      inputType="select"
+      inputLabel="Transmisión" 
       inputName="transmision"
       [ngModelProperty]="vehiculo.transmision" 
       (ngModelPropertyChange)="vehiculo.transmision = $event"
@@ -49,7 +57,8 @@
     </app-custom-input>
 
     <app-custom-input  
-      inputType="text" 
+      inputType="text"
+      inputLabel="Motor" 
       inputName="motor"
       maxChar="15"
       [ngModelProperty]="vehiculo.motor" 
@@ -58,7 +67,8 @@
     </app-custom-input>
 
     <app-custom-input  
-      inputType="text" 
+      inputType="text"
+      inputLabel="Cilindraje" 
       inputName="cilindraje"
       maxChar="2"
       [ngModelProperty]="vehiculo.cilindraje" 
@@ -68,7 +78,8 @@
     </app-custom-input>
 
     <app-custom-input  
-      inputType="text" 
+      inputType="text"
+      inputLabel="Precio" 
       inputName="precio"
       maxChar="10"
       [ngModelProperty]="vehiculo.precio" 
@@ -78,7 +89,8 @@
     </app-custom-input>
 
     <app-custom-input  
-      inputType="file" 
+      inputType="file"
+      inputLabel="Imagen" 
       inputName="imagen" 
       (selectedFileChange)="selectedFile = $event"
     >

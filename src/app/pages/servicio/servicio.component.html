@@ -1,0 +1,79 @@
+<section class="wrapper">
+  <div class="form-header">
+    <a routerLink="/"><span class="material-symbols-outlined">arrow_back</span></a>
+    <h3>Agendar servicio</h3>
+  </div>
+  <form (ngSubmit)="onSubmit()" #formAgregarServicio="ngForm">
+
+    <app-custom-input
+    inputType="text"
+    inputLabel="Nombre"
+    inputName="nombre"
+    [letterValidation]="true"
+    maxChar="50"
+    [ngModelProperty]="citaServicio.nombre"
+    (ngModelPropertyChange)="citaServicio.nombre = $event">
+    </app-custom-input>
+
+    <app-custom-input
+    inputType="text"
+    inputLabel="Apellidos"
+    inputName="apellidos"
+    [letterValidation]="true"
+    maxChar="50"
+    [ngModelProperty]="citaServicio.apellidos"
+    (ngModelPropertyChange)="citaServicio.apellidos = $event">
+    </app-custom-input>
+
+    <app-custom-input
+    inputType="text"
+    inputLabel="Correo electrónico"
+    inputName="email"
+    maxChar="100"
+    [ngModelProperty]="citaServicio.email"
+    (ngModelPropertyChange)="citaServicio.email = $event">
+    </app-custom-input>
+
+    <app-custom-input
+    inputType="text"
+    inputLabel="Número de teléfono"
+    inputName="telefono"
+    [numberValidation]="true"
+    minChar="10"
+    maxChar="10"
+    [ngModelProperty]="citaServicio.telefono"
+    (ngModelPropertyChange)="citaServicio.telefono = $event">
+    </app-custom-input>
+
+    <app-custom-input
+    inputType="date"
+    inputLabel="Fecha de la cita"
+    inputName="fecha"
+    [letterValidation]="true"
+    maxChar="50"
+    (ngModelPropertyChange)="citaServicio.fecha = $event">
+    </app-custom-input>
+
+    <app-custom-input
+    inputType="car"
+    inputLabel="Vehículo"
+    inputName="vehiculo"
+    [ngModelProperty]="citaServicio.vehiculo"
+    (ngModelPropertyChange)="citaServicio.vehiculo = $event"
+    [array]="vehiculos">
+    </app-custom-input>
+
+    <app-custom-input
+    inputType="text"
+    inputLabel="Número de serie"
+    inputName="numero_serie"
+    minChar="17"
+    maxChar="17"
+    [ngModelProperty]="citaServicio.numero_serie"
+    (ngModelPropertyChange)="citaServicio.numero_serie = $event">
+    </app-custom-input>
+
+    <input type="submit" value="Registrar cita">
+    
+  </form>
+</section>

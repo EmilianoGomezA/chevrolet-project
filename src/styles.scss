@@ -2,3 +2,8 @@
 @import 'src/scss/default';
 @import 'src/scss/breakpoints';
 @import 'material-symbols';
+
+input[type="submit"] {
+  color: #fff;
+  cursor: pointer;
+}

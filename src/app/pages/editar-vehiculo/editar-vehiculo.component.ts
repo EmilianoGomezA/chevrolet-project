@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { clasificaciones, colores, transmisiones } from 'src/app/constants/constants';
-import { Vehiculo, VehiculoSubido } from 'src/app/models/vehiculo.model';
+import { Vehiculo } from 'src/app/models/vehiculo.model';
 import { HttpRequestService } from 'src/app/services/http-request.service';
 
 @Component({

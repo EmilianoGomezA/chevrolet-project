@@ -3,10 +3,19 @@
 .wrapper {
   padding: 30px;
 
-  h3 {
+  .form-header {
+    
+    span {
+      margin-bottom: 10px;
+    }
+
+    h3 {
     font-size: 24px;
     margin-bottom: 30px;
+
   }
+  
+}
 
   input[type="submit"] {
     background-color: $secondary-color;

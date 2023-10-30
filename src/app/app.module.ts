@@ -14,6 +14,8 @@ import { RegistrarVehiculoComponent } from './pages/registrar-vehiculo/registrar
 import { CarCardComponent } from './components/car-card/car-card.component';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
 import { EditarVehiculoComponent } from './pages/editar-vehiculo/editar-vehiculo.component';
+import { ServicioComponent } from './pages/servicio/servicio.component';
+import { CotizacionComponent } from './pages/cotizacion/cotizacion.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { EditarVehiculoComponent } from './pages/editar-vehiculo/editar-vehiculo
     RegistrarVehiculoComponent,
     CarCardComponent,
     CustomInputComponent,
-    EditarVehiculoComponent
+    EditarVehiculoComponent,
+    ServicioComponent,
+    CotizacionComponent
   ],
   imports: [
     BrowserModule,

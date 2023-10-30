@@ -9,7 +9,6 @@ div {
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 5px;
-    text-transform: capitalize;
   }
 
   input, select {
@@ -20,9 +19,13 @@ div {
     background-color: transparent;
   }
 
+  select {
+    cursor: pointer;
+  }
+
   input[type="file"] {
     border: none;
-    padding: 0;
+    padding: 5px 0;
   }
 
 }

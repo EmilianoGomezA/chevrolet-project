@@ -32,4 +32,12 @@ export class HttpRequestService {
     return this.http.delete(`${this.baseUrl}/eliminarVehiculo.php?idVehiculo=${idVehiculo}`);
   }
 
+  agregarCitaServicio(formData: FormData) {
+    return this.http.post(`${this.baseUrl}/agregarCitaServicio.php`, formData);
+  }
+
+  agregarCotizacion(formData: FormData) {
+    return this.http.post(`${this.baseUrl}/agregarCotizacion.php`, formData);
+  }
+
 }

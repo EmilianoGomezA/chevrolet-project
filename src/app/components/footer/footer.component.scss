@@ -1,0 +1,136 @@
+@import 'src/styles.scss';
+
+footer {
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .info {
+    width: 40%;
+
+    .logo-footer {
+      width: 100%;
+  
+      img {
+        width: 100%;
+      }
+    }
+
+    .slogan {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 15px;
+
+      @include media-up(sm) {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+    }
+  
+    .social-media {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .follow-us {
+        width: 100%;
+        font-weight: 700;
+        margin-left: 3%;
+
+        @include media-up(sm) {
+          font-size: 20px;
+        }
+      }
+
+      .social-media-icons {
+        display: flex;
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+  
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+  
+        .big-icon{
+          width: 70%;
+        }
+      }
+    }
+
+  }
+
+  .pages {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+    a {
+      margin-left: 30%;
+      transition: color .3s ease;
+
+      @include media-up(sm) {
+        font-size: 20px;
+      }
+    }
+
+    a:hover {
+      color: $secondary-color;
+    }
+  }
+
+  .terms {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+
+    .terms-links {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      @include media-up(xs) {
+        flex-direction: row;
+      }
+    }
+
+    a {
+      transition: color .3s ease;
+
+      @include media-up(xs) {
+        margin: 0 10px;
+      }
+
+      @include media-up(sm) {
+        font-size: 20px;
+      }
+    }
+
+    a:hover {
+      color: $secondary-color;
+    }
+
+    p{
+      text-align: center;
+
+      @include media-up(sm) {
+        font-size: 20px;
+      }
+    }
+
+  }
+  
+}
