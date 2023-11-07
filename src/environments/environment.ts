@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  baseUrl: "http://localhost/ChevroletProject",
+  production: true,
+  baseUrl: "https://practicas-emilianoga.000webhostapp.com",
 }
